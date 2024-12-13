@@ -7,7 +7,62 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Make sure content resizes correctly */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Mobile */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .cta-btn, .footer-links a {
+    font-size: 14px;
+  }
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+  body {
+    font-size: 15px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .cta-btn, .footer-links a {
+    font-size: 15px;
+  }
+}
+
+/* Laptop and larger devices */
+@media (min-width: 1025px) {
+  body {
+    font-size: 16px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .cta-btn, .footer-links a {
+    font-size: 16px;
+  }
 }
