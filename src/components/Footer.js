@@ -32,9 +32,10 @@ const Footer = () => {
         {/* Footer Links Section */}
         <div className="footer-links">
           <ul>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Contact Us</a></li>
+            {/* Update href values with valid URLs or use button for non-navigation links */}
+            <li><a href="/privacy-policy">Privacy Policy</a></li> {/* Replace with actual link */}
+            <li><a href="/terms-of-service">Terms of Service</a></li> {/* Replace with actual link */}
+            <li><a href="/contact-us">Contact Us</a></li> {/* Replace with actual link */}
           </ul>
         </div>
 
