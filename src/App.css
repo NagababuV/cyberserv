@@ -1,0 +1,75 @@
+/* Header Styles */
+header {
+  background-color: #1e3c72;
+  color: white;
+  padding: 20px 0;
+  font-family: 'Arial', sans-serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+}
+
+nav li {
+  margin: 0 20px;
+}
+
+nav a, nav button {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+nav select {
+  padding: 8px;
+  font-size: 16px;
+}
+
+/* About Section */
+#about {
+  padding: 50px;
+  background-color: #f4f4f4;
+}
+
+#about h2 {
+  color: #1e3c72;
+  text-align: center;
+}
+
+#about p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Contact Form Styles */
+form {
+  width: 100%;
+  max-width: 600px;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Success and Error Messages */
+.success-message {
+  margin-top: 10px;
+  color: #28a745;
+}
+
+.error-message {
+  margin-top: 10px;
+  color: red;
+}
+
