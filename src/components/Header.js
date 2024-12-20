@@ -3,26 +3,72 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header style={{ backgroundColor: '#1e3c72', color: '#fff', padding: '10px 0', textAlign: 'center' }}>
-      <nav style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0 20px' }}>
-        <h1>ServCyber</h1>
-        <ul style={{ display: 'flex', listStyleType: 'none', margin: 0 }}>
-          <li style={{ margin: '0 15px' }}>
-            <Link to="/" style={{ color: '#fff', textDecoration: 'none' }}>Home</Link>
+    <header style={styles.header}>
+      <nav style={styles.nav}>
+        <h1 style={styles.logo}>ServCyber</h1>
+        <ul style={styles.menu}>
+          <li style={styles.menuItem}>
+            <Link to="/" style={styles.link}>Home</Link>
           </li>
-          <li style={{ margin: '0 15px' }}>
-            <Link to="/about" style={{ color: '#fff', textDecoration: 'none' }}>About</Link>
+          <li style={styles.menuItem}>
+            <Link to="/about" style={styles.link}>About</Link>
           </li>
-          <li style={{ margin: '0 15px' }}>
-            <Link to="/contact" style={{ color: '#fff', textDecoration: 'none' }}>Contact</Link>
+          <li style={styles.menuItem}>
+            <Link to="/contact" style={styles.link}>Contact</Link>
           </li>
-          <li style={{ margin: '0 15px' }}>
-          <Link to="/service" style={{ color: '#fff', textDecoration: 'none' }}>Service</Link>
+          <li style={styles.menuItem}>
+            <Link to="/service" style={styles.link}>Service</Link>
           </li>
         </ul>
       </nav>
     </header>
   );
+};
+
+const styles = {
+  header: {
+    backgroundColor: '#1e3c72',
+    color: '#fff',
+    padding: '10px 0',
+  },
+  nav: {
+    display: 'flex',
+    flexWrap: 'wrap', // Allow wrapping for smaller screens
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '0 20px',
+  },
+  logo: {
+    fontSize: '24px',
+    margin: '0',
+  },
+  menu: {
+    display: 'flex',
+    flexDirection: 'row', // Default is horizontal
+    listStyleType: 'none',
+    margin: '0',
+    padding: '0',
+  },
+  menuItem: {
+    margin: '0 10px',
+  },
+  link: {
+    color: '#fff',
+    textDecoration: 'none',
+  },
+  '@media (max-width: 768px)': { // Responsive for smaller screens
+    nav: {
+      flexDirection: 'column', // Stack items vertically
+      alignItems: 'center',
+    },
+    menu: {
+      flexDirection: 'column', // Vertical menu for mobile
+      marginTop: '10px',
+    },
+    menuItem: {
+      margin: '10px 0', // Add spacing between items
+    },
+  },
 };
 
 export default Header;
