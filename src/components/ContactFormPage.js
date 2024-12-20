@@ -59,7 +59,7 @@ const ContactFormPage = () => {
       justifyContent: "center",
     },
     form: {
-      width: "100%",
+      width: "90%",
       maxWidth: "600px",
       background: "#ffffff",
       padding: "20px",
@@ -75,7 +75,7 @@ const ContactFormPage = () => {
       fontSize: "16px",
     },
     button: {
-      width: "90%",
+      width: "95%",
       padding: "12px",
       backgroundColor: "#007bff",
       color: "#fff",

@@ -1,12 +1,36 @@
 import React, { useState } from 'react';
+//import './Footer.css'; // Add this line if you have custom styling for the footer
 
 const Footer = () => {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError('');
+    try {
+      const response = await fetch('http://localhost:8080/api/leads/subscribe', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to subscribe. Please try again.');
+      }
+
+      setSubmitted(true);
+      setEmail('');
+    } catch (err) {
+      setError(err.message || 'An error occurred. Please try again later.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -23,19 +47,22 @@ const Footer = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              className="email-input"
             />
-            <button type="submit" className="cta-btn">Subscribe</button>
+            <button type="submit" className="cta-btn" disabled={loading}>
+              {loading ? 'Submitting...' : 'Subscribe'}
+            </button>
           </form>
           {submitted && <p className="success-message">Thank you for subscribing!</p>}
+          {error && <p className="error-message">{error}</p>}
         </div>
 
         {/* Footer Links Section */}
         <div className="footer-links">
           <ul>
-            {/* Update href values with valid URLs or use button for non-navigation links */}
-            <li><a href="/privacy-policy">Privacy Policy</a></li> {/* Replace with actual link */}
-            <li><a href="/terms-of-service">Terms of Service</a></li> {/* Replace with actual link */}
-            <li><a href="/contact-us">Contact Us</a></li> {/* Replace with actual link */}
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-service">Terms of Service</a></li>
+            <li><a href="/contact-us">Contact Us</a></li>
           </ul>
         </div>
 
