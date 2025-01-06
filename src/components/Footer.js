@@ -53,7 +53,7 @@ const Footer = () => {
               {loading ? 'Submitting...' : 'Subscribe'}
             </button>
           </form>
-          {submitted && <p className="success-message">Thank you for subscribing!</p>}
+          {submitted && <p className="success-message" >Thank you for subscribing!</p>}
           {error && <p className="error-message">{error}</p>}
         </div>
 
