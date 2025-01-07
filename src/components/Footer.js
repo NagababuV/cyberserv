@@ -12,7 +12,7 @@ const Footer = () => {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch('http://localhost:8080/api/leads/subscribe', {
+      const response = await fetch('http://51.21.131.200:8080/api/leads/subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
