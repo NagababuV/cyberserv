@@ -14,7 +14,7 @@ const ContactFormPage = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const apiUrl = "http://51.21.131.200:8080/api/leads";
+  const apiUrl = "http://13.51.6.95:8080/api/leads";
 
   // Handle form input changes
   const handleChange = (e) => {
