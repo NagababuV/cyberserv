@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -8,16 +7,26 @@ const Header = () => {
         <h1 style={styles.logo}>ServCyber</h1>
         <ul style={styles.menu}>
           <li style={styles.menuItem}>
-            <Link to="/" style={styles.link}>Home</Link>
+            <a href="/" style={styles.link}>Home</a>
           </li>
           <li style={styles.menuItem}>
-            <Link to="/about" style={styles.link}>About</Link>
+            <a href="/about" style={styles.link}>About</a>
           </li>
           <li style={styles.menuItem}>
-            <Link to="/contact" style={styles.link}>Contact</Link>
+            <a href="/contact" style={styles.link}>Contact</a>
           </li>
           <li style={styles.menuItem}>
-            <Link to="/service" style={styles.link}>Service</Link>
+            <a href="/service" style={styles.link}>Service</a>
+          </li>
+          <li style={styles.menuItem}>
+            <a 
+              href="https://cyber-48573129.hubspotpagebuilder.com/blog/trending-services-in-cyber-security" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              style={styles.link}
+            >
+              Blog
+            </a>
           </li>
         </ul>
       </nav>
@@ -33,7 +42,7 @@ const styles = {
   },
   nav: {
     display: 'flex',
-    flexWrap: 'wrap', // Allow wrapping for smaller screens
+    flexWrap: 'wrap',
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '0 20px',
@@ -44,7 +53,7 @@ const styles = {
   },
   menu: {
     display: 'flex',
-    flexDirection: 'row', // Default is horizontal
+    flexDirection: 'row',
     listStyleType: 'none',
     margin: '0',
     padding: '0',
@@ -56,17 +65,17 @@ const styles = {
     color: '#fff',
     textDecoration: 'none',
   },
-  '@media (max-width: 768px)': { // Responsive for smaller screens
+  '@media (max-width: 768px)': {
     nav: {
-      flexDirection: 'column', // Stack items vertically
+      flexDirection: 'column',
       alignItems: 'center',
     },
     menu: {
-      flexDirection: 'column', // Vertical menu for mobile
+      flexDirection: 'column',
       marginTop: '10px',
     },
     menuItem: {
-      margin: '10px 0', // Add spacing between items
+      margin: '10px 0',
     },
   },
 };
